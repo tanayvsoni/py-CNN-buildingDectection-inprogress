@@ -1,4 +1,4 @@
-from msilib.schema import Directory
+
 import os
 from PIL import Image
 
