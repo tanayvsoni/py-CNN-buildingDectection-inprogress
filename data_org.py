@@ -24,6 +24,7 @@ def org_files():
                 date = input('Enter date image was taken (DD/MM/YY): ')
                 [latitude, longitude] = input('Enter the coordinates of image (lat,long): ').split(',')
                 num_building = input('Enter number of buildings present in image: ')
+                comments = input('Any extra comments? Leave blank if none: ')
                 
                 if input('\nWould you like to edit inputs (y/n): ').lower() == 'y': raise
                 break
@@ -31,7 +32,7 @@ def org_files():
             except: pass
             
         with open(f'{data_directory}/output_zip_info/image_data.csv','a') as csvfile:
-            csvfile.write(f'{new_name},{num_building},{country_name},{date},{latitude},{longitude}\n')
+            csvfile.write(f'{new_name},{num_building},{country_name},{date},{latitude},{longitude},{comments}\n')
         
         with zipfile.ZipFile(f'{data_directory}/output_zip_info/output.zip','a') as zipf:
             zipf.write(f'{data_directory}/input_image/{new_name}',f'{new_name}')
