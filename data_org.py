@@ -1,5 +1,5 @@
 import os
-import zipfile
+from zipfile import ZipFile
 
 def org_files(data_directory):
     """Prompts user to input image data and moves said image into zip file and stores
@@ -42,7 +42,7 @@ def org_files(data_directory):
             csvfile.write(f'{new_name},{num_building},{country_name},{date},{latitude},{longitude},{comments}\n')
         
         # Copy image into zip file
-        with zipfile.ZipFile(f'{data_directory}/output/output.zip','a') as zipf:
+        with ZipFile(f'{data_directory}/output/output.zip','a') as zipf:
             zipf.write(f'{data_directory}/input/{new_name}',f'{new_name}')
         
         # Remove image from input folder    
