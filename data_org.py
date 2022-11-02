@@ -47,10 +47,13 @@ def org_files(data_directory):
         
         # Remove image from input folder    
         os.remove(f'{data_directory}/input/{new_name}')
-                       
-if __name__ == '__main__':
+ 
+def main():
     while True:
         org_files('./data')
         if input('\nAll files have been stored, would you like to input again (y/n): ').lower() == 'n': break
+                       
+if __name__ == '__main__':
+    main()
     
     
