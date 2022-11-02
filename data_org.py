@@ -26,20 +26,16 @@ def org_files(data_directory):
         os.rename(f'{data_directory}/input/{img}',f'{data_directory}/input/{new_name}')
     
         while True:
-            try:
-                # Get relevent data
-                print(f'\nFor image {img} please enter relevent info:\n')
+            # Get relevent data
+            print(f'\nFor image {img} please enter relevent info:\n')
                 
-                country_name = input('Enter name of country present in image: ').lower()
-                date = input('Enter date image was taken (DD/MM/YY): ')
-                [latitude, longitude] = input('Enter the coordinates of image (lat,long): ').split(',')
-                num_building = input('Enter number of buildings present in image: ')
-                comments = input('Any extra comments? Leave blank if none: ')
+            country_name = input('Enter name of country present in image: ').lower()
+            date = input('Enter date image was taken (DD/MM/YY): ')
+            [latitude, longitude] = input('Enter the coordinates of image (lat,long): ').split(',')
+            num_building = input('Enter number of buildings present in image: ')
+            comments = input('Any extra comments? Leave blank if none: ')
                 
-                if input('\nWould you like to edit inputs (y/n): ').lower() == 'y': raise
-                break
-            
-            except: pass
+            if input('\nWould you like to edit inputs (y/n): ').lower() == 'n': break
         
         # Write data input csv file    
         with open(f'{data_directory}/output/image_data.csv','a') as csvfile:
