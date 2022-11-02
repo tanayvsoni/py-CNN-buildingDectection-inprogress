@@ -1,7 +1,6 @@
 # Code for Building Dectection using CNN 
 This repo contains an building dectection and data organization used to train this CNN.
-
-This repo is part of the larger research project in collabroation with professors at the University of Alberta. 
+The repo is part of the larger research project in collabroation with professors at the University of Alberta. 
 
 This project is to build a Image-Based Post-Disaster Recovery Estimation Using Bayesian & Convolutional Neural Network.
 
